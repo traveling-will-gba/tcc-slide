@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {brazil}
+\beamer@sectionintoc {1}{Introdu\c c\~ao}{2}{0}{1}
+\beamer@sectionintoc {2}{Metodologia}{10}{0}{2}
+\beamer@sectionintoc {3}{Resultados}{26}{0}{3}
+\beamer@sectionintoc {4}{Considera\c c\~oes Finais e Trabalhos Futuros}{26}{0}{4}
