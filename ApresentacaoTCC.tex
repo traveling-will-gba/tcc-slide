@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+%    DOCUMENTO LATEX - HEADER                                                 %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%escolha uma  classe
+\documentclass[notes, red, mathserif]{beamer}
+%\documentclass[handout]{beamer}
+% \documentclass[notes=only]{beamer}
+% \documentclass[trans]{beamer}
+%\documentclass[red]{beamer}
+% \documentclass[compress]{beamer}
+%\documentclass[draft]{beamer}
+%\documentclass[class=article]{beamer}
+\beamertemplateshadingbackground{gray!20}{white!10}
+
+% Pacotes
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+%\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{colortbl}
+%\usepackage{eurofrak}
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{mathtools}
+\usepackage{xlop}
+\usepackage{diagbox}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\beamertemplatetransparentcovereddynamic
+\beamertemplatenavigationsymbolsempty
+
+% Comandos
+%\setlength{\belowcaptionskip}{0cm}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}%
+
+\setbeamercovered{highly dynamic}
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+\resetcounteronoverlays{saveenumi}
+% Tema
+\usetheme{Luebeck}
+\useinnertheme{rectangles}
+
+% Informa  o
+\title{Algoritmos para multiplicação rápida de dois números com mais de 1.000 dígitos cada}
+\subject{}
+\institute{Faculdade Gama
+\\ Universidade de Brasília\\ Brasil}
+\date{\today}
+\author[Arthur]
+{
+  Arthur Luis Komatsu Aroeira
+}
+
+ \begin{document}
+ \frame{\titlepage}
+%\frame{\frametitle{Sumário}\tableofcontents[pausesections]}
+
+\section{Introdução}
+
+\begin{frame}{Introdução}
+	\begin{itemize}[<+->]
+		\item O objetivo geral deste trabalho é reescrever o jogo \textit{Traveling Will}, desenvolvido originalmente para PC na disciplina de Introdução aos Jogos Eletrônicos, para o \textit{Nintendo Game Boy Advance}
+	\end{itemize}
+\end{frame}
+
+\section{Metodologia}
+
+\begin{frame}{Implementação dos algoritmos}
+	\begin{itemize}[<+->]
+		\item Para este trabalho, foram implementados 3 algoritmos de multiplicação: tradicional de escola, FFT e a NTT
+		\item Além disso, comparou-se suas eficiências com a biblioteca GMP do C, BigInteger do Java e a precisão arbitrária do Python
+	\end{itemize}
+\end{frame}
+
+\section{Resultados}
+
+\begin{frame}{Otimizações dos algoritmos da NTT}
+	\begin{figure}[H]
+		\includegraphics[width =  \textwidth]{figuras/graficoNTT2.png}
+		\centering
+		\caption{Gráfico dos tempos de execução da NTT em escala logarítmica para quantidade de dígitos $n$}
+		\label{fig:ntt2}
+	\end{figure}
+\end{frame}
+
+\section{Considerações Finais e Trabalhos Futuros}
+
+\begin{frame}{Considerações Finais}
+	\begin{itemize}[<+->]
+		\item Com este trabalho, ficou claro que uma simples operação matemática básica como a multiplicação pode
+	possuir uma análise sofisticada, envolvendo números complexos e aritmética modular
+		\item Ao escolher um algoritmo de multiplicação, deve-se levar em conta os seguintes aspectos:
+		\begin{enumerate}[<+->]
+		 	\item quantidade de dígitos dos números de entrada
+		 	\item memória disponível no hardware local
+		 	\item presença e precisão da aritmética de ponto-flutuante no \textit{harwdare}
+		 \end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\end{document}
