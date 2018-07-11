@@ -5,22 +5,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %escolha uma  classe
-\documentclass[notes, red, mathserif]{beamer}
-%\documentclass[handout]{beamer}
-% \documentclass[notes=only]{beamer}
-% \documentclass[trans]{beamer}
-%\documentclass[red]{beamer}
-% \documentclass[compress]{beamer}
-%\documentclass[draft]{beamer}
-%\documentclass[class=article]{beamer}
+
+\documentclass[notes, mathserif]{beamer}
 \beamertemplateshadingbackground{gray!20}{white!10}
 
 % Pacotes
 \usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
-%\usepackage{graphicx}
 \usepackage{amsmath,amssymb}
 \usepackage{colortbl}
-%\usepackage{eurofrak}
 \usepackage[latin1]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{mathtools}
@@ -102,24 +94,11 @@
 		\end{itemize}
 \end{frame}
 
-\begin{frame}{Desenvolvimento da \textit{engine}}
-	\begin{itemize}[<+->]
-		\item A representação dos objetos do jogo será feita por meio da classe \textit{GameObject}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Desenvolvimento da \textit{engine}}
-	\begin{figure}[H]
-		\includegraphics[width=.4\linewidth]{figuras/game-object-2.png}
-		\centering
-		\caption{Modelagem inicial da classe \textit{GameObject}}
-		\label{fig:modelagem-go}
-	\end{figure}
-\end{frame}
 
 \begin{frame}{Desenvolvimento da \textit{engine}}
 	\begin{itemize}[<+->]
-		\item Principais componentes: vídeo, áudio, física e \textit{input};
+		\item Para este trabalho será desenvolvida uma \textit{engine} que irá padronizar a utilização dos recursos providos pelo \textit{GBA};
+		\item Os principais módulos a serem desenvolvidos serão: vídeo, áudio, física e \textit{input};
 		\item \textbf{Módulo de vídeo}: renderizar imagens e textos, \textit{horizontal scroll};
 		\item \textbf{Módulo de áudio}: iniciar, pausar e parar músicas de fundo e efeitos sonoros;
 		\item \textbf{Módulo de física}: simular a ação de gravidade, detectar (opcionalmente) colisões entre objetos do jogo;
@@ -130,10 +109,12 @@
 \begin{frame}{Reescrita do jogo}
 	\begin{itemize}[<+->]
 		\item Todos os recursos do jogo como imagens, áudios e arquivos de fontes precisarão ser ajustados para um formato utilizável no GBA
+		\item Os principais elementos do jogo podem ser divididos em: objetos do jogo e níveis
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Reescrita do jogo}
+	Objetos do jogo
 	\begin{figure}[H]
 		\includegraphics[width=.9\linewidth]{figuras/class-diagram-1.png}
 		\centering
@@ -143,6 +124,7 @@
 \end{frame}
 
 \begin{frame}{Reescrita do jogo}
+	Níveis do jogo
 	\begin{figure}[H]
 		\includegraphics[width=.9\linewidth]{figuras/class-diagram-2.png}
 		\centering
@@ -151,9 +133,16 @@
 	\end{figure}
 \end{frame}
 
-\section{Resultados}
+\section{Resultados parciais}
 
-\begin{frame}{Jogo Original}
+\begin{frame}{Desenvolvimento do protótipo}
+	\begin{itemize}
+		\item A fim de atestar a viabilidade do porte do jogo \textit{Traveling Will} para o \textit{GBA}, foi feita uma versão funcional do menu original do jogo, já testada em um \textit{Nintendo DS};
+		\item Para isso, a principal ferramenta utilizada foi a \textit{libtonc}, que nessa versão inicial fez o papel de \textit{engine} do jogo.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Desenvolvimento do protótipo}
   \begin{figure}[H]
     \includegraphics[width=.7\linewidth]{figuras/tw-original-1.png}
     \centering
@@ -162,13 +151,20 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Protótipo}
+\begin{frame}{Desenvolvimento do protótipo}
   \begin{figure}[H]
     \includegraphics[width=.7\linewidth]{figuras/tw-gba-1.png}
     \centering
     \caption{Protótipo sendo executado em um emulador de GBA}
     \label{fig:tw-gba}
   \end{figure}
+\end{frame}
+
+\begin{frame}{Desenvolvimento da \textit{gbengine}}
+	\begin{itemize}
+		\item Após a finalização do protótipo inicial, foi iniciado o desenvolvimento da \textit{engine} que irá substituir a \textit{libtonc} na versão final do jogo. Ela irá padronizar a utilização dos recursos providos pelo \textit{GBA};
+		\item Até o momento, o módulo de \textit{input} e parte do módulo de vídeo foram implementados.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Módulo de \textit{Input}}
@@ -210,16 +206,16 @@
 
 \begin{frame}{Considerações Finais}
 	\begin{itemize}[<+->]
-		\item Desenvolvimento de um protótipo usando a \textit{libtonc}
+		\item Para testar o viabilidade de portar o jogo, foi desenvolvido um protótipo usando a \textit{libtonc}
 		\item Início do desenvolvimento da \textit{gbengine}, disponível em \url{https://github.com/traveling-will-gba}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Próximas tarefas}
+\begin{frame}{Trabalhos futuros}
 	As próximas tarefas a serem realizadas são:
 	\begin{itemize}[<+->]
 		\item Conversão dos demais recursos do jogo;
-		\item Aprimoramento do módulo de vídeo da \textit{engine};
+		\item Finalização do módulo de vídeo da \textit{engine};
 		\item Implementação dos módulos de física e áudio na \textit{engine};
 		\item Reescrita do jogo utilizando a \textit{engine} desenvolvida;
 	\end{itemize}
