@@ -10,3 +10,6 @@ clean:
 
 crun:
 	make all && make -j
+
+run:
+	xdg-open ApresentacaoTCC.pdf &

@@ -37,44 +37,35 @@
 \useinnertheme{rectangles}
 
 % Informa  o
-\title{Porte do jogo \textit{Traveling Will} para o \textit{Nintendo Game Boy Advance}}
+\title[Porte do jogo \textit{Traveling Will} para GBA]
+{Porte do jogo \textit{Traveling Will} para o \textit{Nintendo Game Boy Advance}}
 \subject{}
 \institute{Faculdade Gama
-\\ Universidade de Brasília\\ Brasil}
-\date{11 de julho de 2018}
-\author[Igor Duarte e Vitor Barbosa]
+\\ Universidade de Bras\'ilia\\ Brasil}
+\date{10 de dezembro de 2018}
+\author[Igor Duarte e V\'itor Barbosa]
 {
-  Igor Ribeiro Barbosa Duarte e Vítor Barbosa de Araujo
+  Igor Ribeiro Barbosa Duarte e V\'itor Barbosa de Araujo
 }
 
  \begin{document}
  \frame{\titlepage}
-%\frame{\frametitle{Sumário}\tableofcontents[pausesections]}
+%\frame{\frametitle{Sumï¿½rio}\tableofcontents[pausesections]}
 
-\section{Introdução}
-
-\begin{frame}{Contextualização do problema}
+\begin{frame}{Objetivo geral}
 	\begin{itemize}[<+->]
-		\item Uso de \textit{engines} comerciais no desenvolvimento de jogos
-		\item Impacto na performance dos jogos atuais
-		\item Como lidar com cenários onde a performance é indispensável?
+		\item O objetivo geral deste trabalho \'e reescrever o jogo \textit{Traveling Will}, desenvolvido originalmente para PC na disciplina de Introdu\c c\~ao aos Jogos Eletr\^onicos, para o \textit{Nintendo Game Boy Advance}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Introdução}
+\begin{frame}{Objetivos espec\'ificos}
+	Os objetivos espec\'ificos s\~ao:
 	\begin{itemize}[<+->]
-		\item O objetivo geral deste trabalho é reescrever o jogo \textit{Traveling Will}, desenvolvido originalmente para PC na disciplina de Introdução aos Jogos Eletrônicos, para o \textit{Nintendo Game Boy Advance}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Introdução}
-	Os objetivos específicos são:
-	\begin{itemize}[<+->]
-		\item Comprimir imagens e músicas do jogo original para reduzir o uso de memória;
-		\item Criar módulos para renderização de imagens e texto;
-		\item Criar módulos para manipulação de \textit{inputs} dos botões e carregamento de áudio;
-		\item Criar módulos para detecção de colisões e manipulação de eventos;
-		\item Criar métodos para carregamento do \textit{level design} das fases do jogo;
+		\item Comprimir imagens e m\'usicas do jogo original para reduzir o uso de mem\'oria;
+		\item Criar m\'odulos para renderiza\c c\~ao de imagens e texto;
+		\item Criar m\'odulos para manipula\c c\~ao de \textit{inputs} dos bot\~oes e carregamento de \'audio;
+		\item Criar m\'odulos para detec\c c\~ao de colis\~oes e manipula\c c\~ao de eventos;
+		\item Criar m\'etodos para carregamento do \textit{level design} das fases do jogo;
 		\item Executar e testar o jogo desenvolvido na plataforma escolhida.
 	\end{itemize}
 \end{frame}
@@ -82,12 +73,14 @@
 \section{Metodologia}
 
 \begin{frame}{Ferramentas}
-	Para o porte do jogo serão utilizadas as seguintes ferramentas:
+	Para o porte do jogo foram utilizadas as seguintes ferramentas:
 
 		\begin{itemize}[<+->]
 			\item \textit{C++}
 			\item \textit{devkitARM}
 			\item \textit{GIMP}
+			\item \textit{GRIT}
+			\item \texttt{avconv, librosa} e \texttt{modplug tracker}
 			\item \textit{VisualBoyAdvance-M}
 			\item \textit{Nintendo DS}
 			\item \textit{EZFlash II}
@@ -96,138 +89,90 @@
 
 
 \begin{frame}{Desenvolvimento da \textit{engine}}
+	Para este trabalho foi desenvolvida a \texttt{gbengine}.
 	\begin{itemize}[<+->]
-		\item Para este trabalho será desenvolvida uma \textit{engine} que irá padronizar a utilização dos recursos providos pelo \textit{GBA};
-		\item Os principais módulos a serem desenvolvidos serão: vídeo, áudio, física e \textit{input};
-		\item \textbf{Módulo de vídeo}: renderizar imagens e textos, \textit{horizontal scroll};
-		\item \textbf{Módulo de áudio}: iniciar, pausar e parar músicas de fundo e efeitos sonoros;
-		\item \textbf{Módulo de física}: simular a ação de gravidade, detectar (opcionalmente) colisões entre objetos do jogo;
-		\item \textbf{Módulo de \textit{input}}: receber o pressionamento de qualquer botão do GBA.
+		\item M\'odulos implementados: \textit{input}, v\'ideo, gerenciador de mem\'oria, \'audio e f\'isica;
+		\item \textbf{M\'odulo de \textit{input}}: detectar pressionamento dos bot\~oes do GBA.
+		\item \textbf{M\'odulo de v\'ideo}: renderizar, animar e atualizar imagens;
+		\item \textbf{M\'odulo gerenciador de mem\'oria}: garantir aloca\c c\~ao segura e eficiente de mem\'oria;
+		\item \textbf{M\'odulo de \'audio}: iniciar e parar m\'usicas de fundo;
+		\item \textbf{M\'odulo de f\'isica}: simular a a\c c\~ao de gravidade e detectar colis\~oes entre objetos do jogo;
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Reescrita do jogo}
+\section{Resultados - Desenvolvimento da engine}
+
+\begin{frame}{M\'odulo de \textit{input}}
+\end{frame}
+
+\begin{frame}{M\'odulo de v\'ideo}
+\end{frame}
+
+\begin{frame}{M\'odulo gerenciador de mem\'oria}
+\end{frame}
+
+\begin{frame}{M\'odulo de f\'isica}
+\end{frame}
+
+\begin{frame}{M\'odulo utilit\'ario}
+\end{frame}
+
+\section{Resultados - Desenvolvimento do jogo}
+
+\begin{frame}{Adapta\c c\~ao das m\'usicas do jogo}
+\end{frame}
+
+\begin{frame}{Abstra\c c\~ao de n\'iveis e objetos do jogo}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das imagens do jogo}
+\end{frame}
+
+\begin{frame}{Constru\c c\~ao dos nÃ­veis do jogo}
+\end{frame}
+
+\begin{frame}{Transi\c c\~ao entre os n\'iveis do jogo}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+\end{frame}
+
+\section{Considera\c c\~oes Finais e Trabalhos Futuros}
+
+\begin{frame}{Considera\c c\~oes Finais}
+	Principais impedimentos durante a execu\c c\~ao do trabalho:
 	\begin{itemize}[<+->]
-		\item Todos os recursos do jogo como imagens, áudios e arquivos de fontes precisarão ser ajustados para um formato utilizável no GBA
-		\item Os principais elementos do jogo podem ser divididos em: objetos do jogo e níveis
+		\item Entender detalhes do \textit{hardware do GBA};
+		\item Testar o jogo no \textit{console};
+		\item Adapta\c c\~ao de imagens e m\'usicas do jogo;
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Reescrita do jogo}
-	Objetos do jogo
-	\begin{figure}[H]
-		\includegraphics[width=.9\linewidth]{figuras/class-diagram-1.png}
-		\centering
-		\caption{Modelagem inicial dos objetos do jogo}
-		\label{fig:modelagem-objetos}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{Reescrita do jogo}
-	Níveis do jogo
-	\begin{figure}[H]
-		\includegraphics[width=.9\linewidth]{figuras/class-diagram-2.png}
-		\centering
-		\caption{Modelagem inicial dos níveis do jogo}
-		\label{fig:modelagem-niveis}
-	\end{figure}
-\end{frame}
-
-\section{Resultados parciais}
-
-\begin{frame}{Desenvolvimento do protótipo}
-	\begin{itemize}
-		\item A fim de atestar a viabilidade do porte do jogo \textit{Traveling Will} para o \textit{GBA}, foi feita uma versão funcional do menu original do jogo, já testada em um \textit{Nintendo DS};
-		\item Para isso, a principal ferramenta utilizada foi a \textit{libtonc}, que nessa versão inicial fez o papel de \textit{engine} do jogo.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Desenvolvimento do protótipo}
-  \begin{figure}[H]
-    \includegraphics[width=.7\linewidth]{figuras/tw-original-1.png}
-    \centering
-    \caption{Jogo original sendo executado em um PC}
-    \label{fig:tw-original}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Desenvolvimento do protótipo}
-  \begin{figure}[H]
-    \includegraphics[width=.7\linewidth]{figuras/tw-gba-1.png}
-    \centering
-    \caption{Protótipo sendo executado em um emulador de GBA}
-    \label{fig:tw-gba}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Desenvolvimento da \textit{gbengine}}
-	\begin{itemize}
-		\item Após a finalização do protótipo inicial, foi iniciado o desenvolvimento da \textit{engine} que irá substituir a \textit{libtonc} na versão final do jogo. Ela irá padronizar a utilização dos recursos providos pelo \textit{GBA};
-		\item Até o momento, o módulo de \textit{input} e parte do módulo de vídeo foram implementados.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Módulo de \textit{Input}}
-  \begin{itemize}[<+->]
-		\item Registrador
-		\item Checagem dos estados
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Módulo de \textit{Input}}
-	\begin{figure}[H]
-    \includegraphics[width=.7\linewidth]{figuras/demo-input.png}
-    \centering
-    \caption{Teste de pressionamento de botões no emulador}
-    \label{fig:demo-input}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Módulo de Vídeo}
-	\begin{itemize}
-		\item As principais funcionalidades que o módulo de vídeo deverá ter são:
-			\begin{itemize}[<+->]
-				\item Escolha modo de vídeo
-				\item Escolha do \textit{background} a ser utilizado
-				\item Renderização de \textit{backgrounds} em qualquer região válida de memória
-				\item Renderização de \textit{sprites} em qualquer região válida de memória
-			\end{itemize}
-
-	\item Funcionalidades da versão atual
-		\begin{itemize}[<+->]
-			\item Escolha do modo de vídeo (incompleto)
-			\item Escolha do \textit{background} a ser utilizado (incompleto)
-			\item Renderização de \textit{backgrounds} apenas em uma região específica de memória
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-
-\section{Considerações Finais e Trabalhos Futuros}
-
-\begin{frame}{Considerações Finais}
+\begin{frame}{Considera\c c\~oes Finais}
+	Pontos de melhoria p\'os-execu\c c\~ao do trabalho:
 	\begin{itemize}[<+->]
-		\item Para testar o viabilidade de portar o jogo, foi desenvolvido um protótipo usando a \textit{libtonc}
-		\item Início do desenvolvimento da \textit{gbengine}, disponível em \url{https://github.com/traveling-will-gba}
+		\item Melhor prioriza\c c\~ao das tarefas a serem executadas;
+		\item Testes mais frequentes no \textit{console}
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Considera\c c\~oes Finais}
+	\textit{\'E poss\'ivel portar o jogo Traveling Will,
+desenvolvido para PC pelos autores deste trabalho, para o Nintendo Gameboy Advance, no
+contexto de um trabalho de conclus\~ao de curso, com performance e jogabilidade pr\'oximos
+da vers\~ao para computador?}
+\par
+R: \textbf{Sim, \'e poss\'ivel.}
 \end{frame}
 
 \begin{frame}{Trabalhos futuros}
-	As próximas tarefas a serem realizadas são:
 	\begin{itemize}[<+->]
-		\item Conversão dos demais recursos do jogo;
-		\item Finalização do módulo de vídeo da \textit{engine};
-		\item Implementação dos módulos de física e áudio na \textit{engine};
-		\item Reescrita do jogo utilizando a \textit{engine} desenvolvida;
+		\item Melhorar m\'odulo de \'audio para carregar efeitos sonoros e pausar m\'usicas;
+		\item Implementar carregamento e utiliza\c c\~ao de fontes;
+		\item Adicionar elementos de HUD e sele\c c\~ao de fases;
+		\item Salvar o estado do jogo em mem\'oria;
+		\item Implementar um desfragmentador de mem\'oria na classe \texttt{MemoryManager}
 	\end{itemize}
-\end{frame}
-
-\begin{frame}{Cronograma}
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{figuras/cronograma.png}
-		\centering
-		\caption{Cronograma de desenvolvimento}
-		\label{fig:cronograma}
-	\end{figure}
 \end{frame}
 
 \end{document}
