@@ -137,6 +137,21 @@
 \end{frame}
 
 \begin{frame}{M\'odulo de v\'ideo}
+	\begin{itemize}[<+->]
+		\item Classe \texttt{Texture}: renderiza\c c\~ao e anima\c c\~ao de \textit{sprites}
+		\item Construtor por c\'opia
+		\item Classe \texttt{Background}: renderiza\c c\~ao e \textit{scroll} de \textit{backgrounds}
+		\item Escolha da paleta do \textit{background} no momento da convers\~ao
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{M\'odulo de v\'ideo}
+	\begin{figure}[H]
+		\includegraphics[width=.8\linewidth]{figuras/construtor-texture.png}
+		\centering
+		\caption{Construtor da classe \texttt{Texture}}
+		\label{fig:inputdemocode}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{M\'odulo gerenciador de mem\'oria}
@@ -226,6 +241,62 @@
 \section{Resultados - Desenvolvimento do jogo}
 
 \begin{frame}{Adapta\c c\~ao das m\'usicas do jogo}
+	\begin{itemize}[<+->]
+		\item \textit{Parser} do level design original
+		\item Reprodu\c c\~ao de ondas quadradas
+		\item Reduzir a frequ\^encia das m\'usicas originais
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das m\'usicas do jogo}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das m\'usicas do jogo}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das m\'usicas do jogo}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das m\'usicas do jogo}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das imagens do jogo}
+	\begin{itemize}[<+->]
+		\item Propor\c c\~ao \texttt{3:1} em rela\c c\~ao \`a altura das imagens
+		\item Convers\~ao das imagens utilizando a ferramenta \texttt{grit}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das imagens do jogo}
+	\begin{figure}[H]
+		\includegraphics[width=.8\linewidth]{figuras/grit-sprite.png}
+		\centering
+		\caption{Comando para convers\~ao das \textit{sprites}}
+		\label{fig:vsync}
+	\end{figure}
+
+	\begin{figure}[H]
+		\includegraphics[width=.8\linewidth]{figuras/grit-background.png}
+		\centering
+		\caption{Comando para convers\~ao dos \textit{backgrounds}}
+		\label{fig:vsync}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das imagens do jogo}
+	\begin{itemize}[<+->]
+		\item Tamanho do \textit{background}
+		\item \textit{Scroll} horizontal dos \textit{backgrounds} (registradores \texttt{REGBGxHOFS})
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Adapta\c c\~ao das imagens do jogo}
+	\begin{figure}[H]
+		\includegraphics[width=.5\linewidth]{figuras/bg-scroll.png}
+		\centering
+		\caption{\textit{Scroll} horizontal dos \textit{backgrounds}}
+		\label{fig:vsync}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Adapta\c c\~ao das imagens do jogo}
