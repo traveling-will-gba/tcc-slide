@@ -140,12 +140,87 @@
 \end{frame}
 
 \begin{frame}{M\'odulo gerenciador de mem\'oria}
+	\begin{itemize}
+		\item Garantir aloca\c c\~ao segura e eficiente de mem\'oria
+		\item Gerenciamento com parti\c c\~oes vari\'aveis
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{M\'odulo gerenciador de mem\'oria}
+	Funcionamento do gerenciador de mem\'oria:
+	\begin{itemize}
+		\item Inicializar os ponteiros para as regi\~oes de mem\'oria
+		\item Quando h\'a chamada de aloca\c c\~ao, procura pelo primeiro espa\c co dispon\'ivel
+		\item Verificar espa\c co dispon\'ivel
+		\item Liga posi\c c\~ao no \texttt{bitset}
+		\item Retorna o ponteiro encontrado
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{M\'odulo gerenciador de mem\'oria}
+	\begin{figure}[H]
+		\includegraphics[width=.4\linewidth]{figuras/bitfield.png}
+		\centering
+		\caption{Uso de \textit{bitfields} nos metadados das \textit{sprites}}
+		\label{fig:bitfield}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{M\'odulo gerenciador de mem\'oria}
+	\begin{figure}[H]
+		\includegraphics[width=.7\linewidth]{figuras/singleton.png}
+		\centering
+		\caption{Uso de \textit{singleton} na classe \texttt{MemoryManager}}
+		\label{fig:singleton}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{M\'odulo de f\'isica}
+	\begin{itemize}
+		\item Checar se os objetos est\~ao colidindo
+		\item Chamar \texttt{on\_collision()} do alvo
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{M\'odulo utilit\'ario}
+	C\'odigo \textit{assembly} com chamada para \texttt{vbaprint()}
+	\begin{figure}[H]
+		\includegraphics[width=.4\linewidth]{figuras/print_asm.png}
+		\centering
+		\caption{Chamada para \texttt{vbaprint()}}
+		\label{fig:vbaprint}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}{M\'odulo utilit\'ario}
+	Fun\c c\~ao \texttt{print()}
+	\begin{figure}[H]
+		\includegraphics[width=.7\linewidth]{figuras/print.png}
+		\centering
+		\caption{Fun\c c\~ao \texttt{print()}}
+		\label{fig:print}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{M\'odulo utilit\'ario}
+	Fun\c c\~ao \texttt{mem16cpy()}
+	\begin{figure}[H]
+		\includegraphics[width=.7\linewidth]{figuras/mem16cpy.png}
+		\centering
+		\caption{Fun\c c\~ao \texttt{mem16cpy()}}
+		\label{fig:mem16cpy}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{M\'odulo utilit\'ario}
+	Fun\c c\~ao \texttt{vsync()}
+	\begin{figure}[H]
+		\includegraphics[width=.5\linewidth]{figuras/vsync.png}
+		\centering
+		\caption{Fun\c c\~ao \texttt{vsync()}}
+		\label{fig:vsync}
+	\end{figure}
 \end{frame}
 
 \section{Resultados - Desenvolvimento do jogo}
@@ -153,19 +228,123 @@
 \begin{frame}{Adapta\c c\~ao das m\'usicas do jogo}
 \end{frame}
 
-\begin{frame}{Abstra\c c\~ao de n\'iveis e objetos do jogo}
-\end{frame}
-
 \begin{frame}{Adapta\c c\~ao das imagens do jogo}
 \end{frame}
 
 \begin{frame}{Constru\c c\~ao dos n\'iveis do jogo}
+	\begin{itemize}[<+->]
+		\item \textit{Parser} para \textit{level design} original
+		\item Reutilizar texturas das plataformas
+		\item Carregar somente os itens vis\'iveis
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Constru\c c\~ao dos n\'iveis do jogo}
+	\begin{figure}[H]
+		\includegraphics[width=.7\linewidth]{figuras/plats.png}
+		\centering
+		\caption{C\'odigo para atualiza\c c\~ao das plataformas}
+		\label{fig:vsync}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Transi\c c\~ao entre os n\'iveis do jogo}
+	\begin{figure}[H]
+		\includegraphics[width=.8\linewidth]{figuras/transicao.png}
+		\centering
+		\caption{Transi\c c\~ao entre n\'iveis}
+		\label{fig:vsync}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-menu.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-menu.png}
+    \caption{Compara\c c\~ao entre os menus.}%
+    \label{fig:comp1}%
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-fase1.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-fase1.png}
+    \caption{Compara\c c\~ao da primeira fase.}%
+    \label{fig:comp1}%
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-fase2.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-fase2.png}
+    \caption{Compara\c c\~ao da segunda fase.}%
+    \label{fig:comp1}%
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-fase3.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-fase3.png}
+    \caption{Compara\c c\~ao da terceira fase.}%
+    \label{fig:comp1}%
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-fase4.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-fase4.png}
+    \caption{Compara\c c\~ao da quarta fase.}%
+    \label{fig:comp1}%
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-fase5.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-fase5.png}
+    \caption{Compara\c c\~ao da quinta fase.}%
+    \label{fig:comp1}%
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-fase6.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-fase6.png}
+    \caption{Compara\c c\~ao da sexta fase.}%
+    \label{fig:comp1}%
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-vitoria.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-vitoria.png}
+    \caption{Compara\c c\~ao das telas de vit\'oria.}%
+    \label{fig:comp1}%
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Compara\c c\~ao entre o porte e o jogo original}
+	\begin{figure}%
+    \includegraphics[width=.5\linewidth]{figuras/pc-derrota.png}
+    \qquad
+    \includegraphics[width=.4\linewidth]{figuras/gba-derrota.png}
+    \caption{Compara\c c\~ao das telas de derrota.}%
+    \label{fig:comp1}%
+	\end{figure}
 \end{frame}
 
 \section{Considera\c c\~oes Finais e Trabalhos Futuros}
